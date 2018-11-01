@@ -54,7 +54,7 @@ public class Mandelbrot extends JPanel implements ActionListener, KeyListener {
 		setFocusable(true);
 		setFocusTraversalKeysEnabled(false);
 		buffer = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
-		SCALE = maxZoom*8;
+		//SCALE = maxZoom*8;
 	}
 	
 	public void renderMandelbrotmenge() {
@@ -70,8 +70,8 @@ public class Mandelbrot extends JPanel implements ActionListener, KeyListener {
 
 	public int calculatePoint(double x, double y) {
 
-		x = ((x*10000000000L - WIDTH / 2d*10000000000L) / SCALE*10000000000L) + xOffset;
-		y = ((y*10000000000L - HEIGHT / 2d*10000000000L) / SCALE*10000000000L) + yOffset;
+		x = ((x - WIDTH / 2d) / SCALE) + xOffset;
+		y = ((y - HEIGHT / 2d) / SCALE) + yOffset;
 
 		double cx = x;
 		double cy = y;
