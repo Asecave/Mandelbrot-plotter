@@ -116,6 +116,9 @@ public class Mandelbrot extends JPanel implements ActionListener, KeyListener {
 			if (animation) {
 				SCALE = 100;
 				pb = new ProgressBar();
+				timer = 0;
+				tm.setDelay(timer);
+				tm.restart();
 			}
 		}
 		renderMandelbrotmenge();
